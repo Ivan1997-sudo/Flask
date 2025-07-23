@@ -27,7 +27,7 @@ def reverse(text):
         return text[::-1]
     return "Текст должен быть длиннее"
 
-@app.route('/user/<name>/<age>')
+@app.route('/user/<name>/<int:age>')
 def user(name, age):
     if int(age) >= 0:
         return f"Hello, {name}. You are {age} years old."
