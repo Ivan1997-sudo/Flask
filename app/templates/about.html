@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+</head>
+<body>
+    <form>
+        <h2 align="center">Анкета для участия в исследовательской миссии на Марсе</h2>
+
+        <div class="container">
+                <label for="name">Имя</label>
+                <input id="name" type="text" name="name" required>
+        </div>
+
+        <div class="container">
+            <label for="last-name">Фамилия</label>
+            <input id="last-name" type="text" name="last-name" required>
+        </div>
+
+        <div class="container">
+            <label>
+                Возраст
+                <input type="number" name="age" required>
+            </label>
+        </div>
+
+        <div class="container">
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" required>
+        </div>
+
+        <div class="container">
+            <div>Тип миссии</div>
+            <input type="radio" id="type-of-mission-1" name="mission" value="researcher" required>
+            <label for="type-of-mission-1">Исследователь</label>
+            <input type="radio" id="type-of-mission-2" name="mission" value="engineer">
+            <label for="type-of-mission-2">Инженер</label>
+            <input type="radio" id="type-of-mission-3" name="mission" value="doctor">
+            <label for="type-of-mission-3">Врач</label>
+        </div>
+
+        <div class="container">
+            <div>Навыки</div>
+            <input type="checkbox" id="skills1" name="skills" value="programming" required>
+            <label for="skills1">Программирование</label>
+            <input type="checkbox" id="skills2" name="skills" value="medicine">
+            <label for="skills2">Медицина</label>
+            <input type="checkbox" id="skills3" name="skills" value="construction">
+            <label for="skills3">Строительство</label>
+        </div>
+
+        <div class="container">
+             Опиши кратко, сынок, почему мы должны взять именно тебя?
+            <input type="text" name="email" required>
+        </div>
+
+        <div class="container">
+            <label for="photo">Загрузить фотографию</label>
+            <input id="photo" type="file" name="photo">
+        </div>
+
+        <div class="container">
+            <label>
+            <input type="checkbox" name="agree" required>
+            Я согласен с условиями
+            </label>
+        </div>
+
+        <div class="container">
+            <button type="submit">Отправить заявку</button>
+        </div>
+    </form>
+
+    <br>
+    <a href="/">Главная</a>
+    <br>
+    <a href="/contact">Контакты</a>
+
+</body>
+</html>
