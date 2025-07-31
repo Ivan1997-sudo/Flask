@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+{% block title %}Form Example{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+{% endblock %}
+
+{% block content %}
+<h1 class="funny-title">😄 Введите Свои Данные! 🦄</h1>
+<form action="/submit" method="POST" class="funny-form">
+    <label for="name">Твое Супер Крутое Имя:</label>
+    <input type="text" id="name" name="name" required oninvalid="this.setCustomValidity
+    ('Если у вас нет имени, придумайте себе сами!')" oninput="this.setCustomValidity('')"><br><br>
+
+    <label for="email">Твой Потрясающий Email:</label>
+    <input type="email" id="email" name="email" required oninvalid="this.setCustomValidity
+    ('Укажите свой Email, чтобы мы знали куда отправить приз!')" oninput="this.setCustomValidity('')"><br><br>
+
+    <label for="color">Твой Любимый Цвет:</label>
+    <input type="color" id="color" name="color" required><br><br>
+
+    <label for="profession">Любимая профессия: </label>
+    <select id="profession" name="profession">
+    <option value="" disabled selected>Выберите вариант</option>
+    <option value="Актриса"> Актриса</option>
+    <option value="Фотограф"> Фотограф</option>
+    <option value="Врач"> Врач</option>
+    </select>
+
+    <p>Выберите хобби:</p>
+    <div class="hobby">
+    <label><input type="checkbox" name="hobbies" value="Чтение"> Чтение</label>
+    <label><input type="checkbox" name="hobbies" value="Спорт"> Спорт</label>
+    <label><input type="checkbox" name="hobbies" value="Игры"> Игры</label>
+    </div><br><br>
+
+    <p>Тип пользователя:</p>
+    <div class="hobby">
+    <label><input type="radio" name="level" value="Новичок">Новичок</label>
+    <label><input type="radio" name="level" value="Продвинутый">Продвинутый</label>
+    </div><br><br>
+
+    <label for="thing">Смешная штука: </label>
+    <select id="thing" name="thing">
+    <option value="" disabled selected>Выберите штуку</option>
+    <option value="Штука 1"> Штука 1</option>
+    <option value="Штука 2"> Штука 2</option>
+    <option value="Штука 3"> Штука 3</option>
+    </select><br><br>
+
+    <div class="container">
+        <button type="submit" class="funny-button">🚀 Let's Go!</button>
+        <label for="button" class="funny-button">Нажми меня</label>
+        <input type="checkbox" id="button" class="button">
+        <div class="text">Вы нажали на меня</div>
+        <div class="foto"><img src="{{ url_for('static', filename='/40.png') }}"
+                               alt="Фото котика" width=100% height=100%></div>
+    </div>
+</form>
+
+{% endblock %}
