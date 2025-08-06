@@ -4,12 +4,22 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}My Flask App{% endblock %}</title>
-    {% block extra_css %}{% endblock %}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles-base.css') }}">
 </head>
 <body>
+    <div class="container">
+        <div class="top_panel">
+            <a href="/"><button type="submit" class="element">Главная</button></a>
+            <a href="/about"><button type="submit" class="element">О нас</button></a>
+            <a href="/contact"><button type="submit" class="element">Информация</button></a>
+        </div>
 
-    {% block content %}
-    {% endblock %}
+        {% block content %}
+        {% endblock %}
 
+        <div class="bottom_panel">
+            &copy; Общество путешествий во времени
+        </div>
+    </div>
 </body>
 </html>

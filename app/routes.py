@@ -1,37 +1,26 @@
 from flask import render_template, request, redirect, url_for
 from app import app
-import requests
 
 # Определяем маршрут и привязываем его к функции
-
 @app.route("/")
-def form():
-    return render_template("form.html")
+def home():
+    return render_template("home.html")
 
-@app.route("/submit", methods=["POST", "GET"])
-def submit():
+@app.route("/about")
+def about():
+    return render_template("about.html")
+
+@app.route("/contact")
+def contact():
+    return render_template("contact.html")
+
+@app.route("/answer", methods=["POST", "GET"])
+def answer():
     if request.method == "POST":
         name = request.form.get("name")  # Получаем имя из формы
-        email = request.form.get("email")  # Получаем email из формы
-
-        color = request.form.get("color")
-        name_color = None
-        if color != "#000000":
-            url = f"https://api.color.pizza/v1/?values={color[1:]}"
-            response = requests.get(url)
-            if response.status_code == 200:
-                repos = response.json()
-                name_color = repos['paletteTitle']
-        else:
-            color = None
-
-        profession = request.form.get("profession")
-        hobbies = request.form.getlist("hobbies")
-        if len(hobbies) == 0:
-            hobbies = False
-        level = request.form.get("level")
-        thing = request.form.get("thing")
-        return render_template("result.html", name=name, email=email,
-        color=color, name_color = name_color, profession=profession, hobbies=hobbies, level=level, thing=thing)
+        email = request.form.get("email")
+        purpose = request.form.get("purpose")
+        message = "Ваша заявка отправлена"
+        return render_template("contact.html", message=message)
     else:
         return redirect(url_for("form"))  # Если запрос GET, возвращаем на форму
