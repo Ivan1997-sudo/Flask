@@ -107,7 +107,7 @@ h1 {
 
 /* Сообщение об удачной отправке */
 .answer {
-    background-color: #ff4500;
+    background-color: green;
     color: white;
     margin: auto;
     width: 60%;
