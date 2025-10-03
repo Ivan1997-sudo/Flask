@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task List</title>
+    <!-- Подключаем Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+    <div class="container mt-5">
+        <h1 class="text-center">Список задач</h1>
+
+        <div class="card shadow p-3">
+            <ul class="list-group">
+                {% for task in tasks %}
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    {{ task.title }}
+                    <div>
+                        <a href="{{ url_for('edit_task', id=task.id) }}" class="btn btn-sm btn-warning">Редактировать</a>
+                        <a href="{{ url_for('delete_task', id=task.id) }}" class="btn btn-sm btn-danger" onclick="return confirm('Вы точно хотите удалить задачу?')">Удалить</a>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+
+        <div class="text-center mt-4">
+            <a href="{{ url_for('add_task') }}" class="btn btn-success">Добавить задачу</a>
+        </div>
+    </div>
+
+</body>
+</html>
