@@ -86,10 +86,10 @@ def edit(id):
 #Удаление досье
 @app.route("/delete/<id>")
 def delete(id):
-        agent = SecretAgency.query.get_or_404(id)  # Получаем задачу по ID
-        db.session.delete(agent)  # Удаляем
-        db.session.commit()  # Подтверждаем изменения
-        return redirect(url_for('full_list'))
+    agent = SecretAgency.query.get_or_404(id)  # Получаем задачу по ID
+    db.session.delete(agent)  # Удаляем
+    db.session.commit()  # Подтверждаем изменения
+    return redirect(url_for('full_list'))
 
 #Удаление всех досье
 @app.route("/full_delete")

@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% block title %}Оформление{% endblock %}
+{% block content %}
+<div class="p-1"></div>
+<div class="card fs-3 fw-bold">Оформление заказа</div>
+<div class="p-1"></div>
+
+<form action="{{ url_for('making') }}" method="post">
+    <div class="row">
+        <div class="col-8 border">
+            <div class="container text-center card">
+                <div class="fs-4 fw-bold">Получатель</div>
+                <div class="form-floating mb-2">
+                    <input type="text" name="name" id="name" class="form-control" value={{info_user["Имя"]}} required>
+                    <label for="name">Имя</label>
+                </div>
+                <div class="form-floating mb-2">
+                    <input type="text" name="number" id="number" class="form-control" value={{info_user["Номер"]}} required>
+                    <label for="number">Номер телефона</label>
+                </div>
+                <div class="form-floating mb-2">
+                    <input type="email" name="email" id="email" class="form-control" value={{info_user["email"]}} required>
+                    <label for="email">Адрес электронной почты</label>
+                    <div id="emailHelp" class="form-text">Заказ выдаётся по коду из SMS на номер телефона получателя</div>
+                </div>
+
+                <div class="fs-4 fw-bold">Способ получения</div>
+                <div class="accordion" id="accordionExample">
+                    <div class="row">
+                        <div class="col-6 border">
+                            <input type="radio" class="btn-check" name="Способ получения" id="pickup" value="Самовывоз" autocomplete="off" checked>
+                            <label class="btn btn-outline-success w-100 h-100" for="pickup" data-bs-toggle="collapse" data-bs-target="#collapse-pickup" aria-controls="collapse-pickup">Самовывоз</label>
+                        </div>
+                        <div class="col-6 border">
+                            <input type="radio" class="btn-check" name="Способ получения" id="delivery" value="Доставка" autocomplete="off">
+                            <label class="btn btn-outline-success w-100 h-100" for="delivery" data-bs-toggle="collapse" data-bs-target="#collapse-delivery" aria-controls="collapse-delivery">Доставка</label>
+                        </div>
+                    </div>
+
+                    <div id="collapse-pickup" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                        <div class="fs-5">Выберите магазин из списка</div>
+                        <div class="mb-2">
+                            <label for="pickup-address" class="visually-hidden"></label>
+                            <select class="form-control" id="pickup-address" name="pickup-address">
+                            <option value="" disabled selected>Выберите из списка</option>
+                            <option value="Один">Один</option>
+                            <option value="Два">Два</option>
+                            <option value="Три">Три</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div id="collapse-delivery" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                         <div class="mb-3">
+                            <label for="delivery-address" class="fs-5">Введите адрес доставки</label>
+                            <textarea class="form-control" id="delivery-address" name="delivery-address" rows="1"></textarea>
+                        </div>
+                    </div>
+                </div>
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="alert alert-{{ category }}">{{ message }}</div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+
+                <div class="fs-4 fw-bold">Способ оплаты</div>
+                <div class="mb-3">
+                    <input type="radio" class="btn-check" name="payment_method" id="payment_method_1" value="Картой онлайн" autocomplete="off" disabled >
+                    <label class="btn btn-outline-success" for="payment_method_1" style="width: 200px; height: 60px;">
+                        <img src="{{ url_for('static', filename='/Аватарка.png') }}" alt="Logo" width="50" height="50" class="d-inline-block align-text-middle">
+                        <span>Картой онлайн</span>
+                    </label>
+                    <input type="radio" class="btn-check" name="payment_method" id="payment_method_2" value="СБП" autocomplete="off" disabled>
+                    <label class="btn btn-outline-success" for="payment_method_2" style="width: 200px; height: 60px;">
+                        <img src="{{ url_for('static', filename='/Аватарка.png') }}" alt="Logo" width="50" height="50" class="d-inline-block align-text-middle ">
+                        СБП
+                    </label>
+                    <input type="radio" class="btn-check" name="payment_method" id="payment_method_3" value="Оплата при получении" autocomplete="off" checked>
+                    <label class="btn btn-outline-success" for="payment_method_3" style="width: 200px; height: 60px;">
+                        <img src="{{ url_for('static', filename='/Аватарка.png') }}" alt="Logo" width="50" height="50" class="d-inline-block align-text-middle">
+                        При получении
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-4 border">
+            <div class="container text-center card">
+                <div class="fs-4 fw-bold">Информация о заказе</div>
+                <div> Количество товаров: {{ total_book }}</div>
+                <div> Сумма к оплате: {{ total_summ }} ₽</div>
+                <button type="submit" class="btn btn-outline-success mb-2">Оформить заказ</button>
+            </div>
+        </div>
+    </div>
+</form>
+{% endblock %}

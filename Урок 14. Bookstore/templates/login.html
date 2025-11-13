@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+{% block title %}Вход{% endblock %}
+
+{% block content %}
+<div class="p-1"></div>
+<div class="container text-center card w-50 border">
+    <div class="fs-3 fw-bold">Введите данные для входа</div>
+    <div class="md-3">
+        <form action="{{ url_for('login') }}" method="POST">
+            <input type="hidden" name="form_type" value="login">
+            {{ form.hidden_tag() }}
+            {{ form.email.label(class="form-label") }}
+            {{ form.email(class="form-control", value = user['email'] if user else (form.email.data if form.email.data)) }}
+
+            {{ form.password.label(class="form-label") }}
+            {{ form.password(class="form-control") }}
+            <div class="p-2">
+                <button type="submit" class="btn btn-outline-success">Войти</button>
+            </div>
+        </form>
+         {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                {% for category, message in messages %}
+                    <div class="alert alert-{{ category }}">{{ message }}</div>
+                {% endfor %}
+            {% endif %}
+        {% endwith %}
+    </div>
+</div>
+
+<!-- Модальное окно -->
+<div class="modal fade text-dark" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Проверка номера телефона</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+            </div>
+            <div class="modal-body">
+                На номер <span class="fw-bold"> {{user['phone'] if user}} </span> отправлен код <span class="fw-bold"> {{secret_code}} </span>
+                <form action="{{ url_for('login') }}" method="POST">
+                    <input type="hidden" name="form_type" value="check">
+                    <input type="text" id="code" name="code" class="form-control" placeholder="Введите код" required value="{{ entered_code if entered_code }}">
+                    <div class="p-2">
+                        <button type="submit" class="btn btn-outline-success">Подтвердить</button>
+                    </div>
+                </form>
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        {% for category, message in messages %}
+                            <div class="alert alert-{{ category }}">{{ message }}</div>
+                        {% endfor %}
+                    {% endif %}
+                {% endwith %}
+            </div>
+        </div>
+    </div>
+</div>
+
+{% if show_modal %}
+<script>
+  var myModal = new bootstrap.Modal(document.getElementById('exampleModal'));
+  window.onload = function() {
+    myModal.show();
+  };
+</script>
+{% endif %}
+{% endblock %}

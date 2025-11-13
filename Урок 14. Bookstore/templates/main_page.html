@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% block title %}Главная страница{% endblock %}
+{% block content %}
+<div class="p-1"></div>
+<div class="card fs-3 fw-bold">Подборка книг с самым высоким рейтингом:</div>
+<div class="p-1"></div>
+
+<div class="container text-center card">
+    <div class="row row-cols-2 row-cols-lg-5 gx-4 gy-2">
+        {% for book in books %}
+        <div class="col border d-flex flex-column ">
+            {% if books[book].rating != None %}
+            Оценка наших читателей: {{ books[book].rating }}
+            {% else %}
+            Оценок пока нет
+            {% endif %}
+            <a class="dropdown-item" href="{{ url_for('product', title_book=book) }}">
+                <div class="ratio" style="--bs-aspect-ratio: 150%;">
+                    <img src="{{ url_for('static', filename=book + '/1.png') }}" class="img-thumbnail" alt="Обложка {{ book }}">
+                </div>
+                <div class="overflow-auto" style="height: 40px;">{{ book }}</div>
+            </a>
+            <div class="row align-items-center ">
+                <div class="col-6 border ">
+                    Цена: {{ books[book].price }} ₽
+                </div>
+                <div class="col-6 border">
+                    <!--Если пользователи авторизован и у него уже есть в корзине данная книга - даст возможность изменить количество-->
+                    {% if name and cart_item[book] %}
+                        <form action="{{ url_for('cart', title_book=book, action='-1') }}" method="post" style="display:inline;">
+                            <button type="submit" class="btn btn-outline-success">-</button>
+                        </form>
+                        {{ cart_item[book].quantity }}
+                        <form action="{{ url_for('cart', title_book=book, action='+1') }}" method="post" style="display:inline;">
+                            <button type="submit" class="btn btn-outline-success">+</button>
+                        </form>
+                    {% else %}
+                        <form action="{{ url_for('cart', title_book=book, action='+1') }}" method="post" style="display:inline;">
+                            <button type="submit" class="btn btn-outline-success">Купить</button>
+                        </form>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}

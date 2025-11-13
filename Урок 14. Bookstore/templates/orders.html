@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% block title %}Заказы{% endblock %}
+{% block content %}
+<div class="p-1"></div>
+<div class="card fs-3 fw-bold">История заказов</div>
+
+{% for order in all_orders %}
+    <div class="p-1"></div>
+    <div class="container card">
+        <div class="row">
+            <div class="col-8 border text-start">
+                <div class="text-start fs-5 fw-bold"> Заказ № {{ order.id }} от {{ order.date }} </div>
+                <div class="text-start fs-6 fw-medium">{{ order.status }}</div>
+                <div class="p-2">
+                    <div>Получатель: {{ order.recipients_name }}, {{ order.recipients_phone }}</div>
+                    <div>Способ получения: {{ order.method_receipt }}</div>
+                    {% if order.method_receipt == 'Самовывоз' %}
+                    <div>Адрес магазина: {{ order.address }}</div>
+                    {% else %}
+                    <div>Адрес доставки: {{ order.address }}</div>
+                    {% endif %}
+                </div>
+            </div>
+
+            <div class="col-4 border align-self-center">
+                <div>Сумма заказа: {{ price_item[order.id] }} ₽</div>
+                <div>{{ order.payment_method }}</div>
+                <button class="btn btn-outline-success" type="button" data-bs-toggle="collapse" data-bs-target="#{{ order.id }}" aria-expanded="false" aria-controls="order.id">
+                    Информация о заказе
+                </button>
+            </div>
+
+            <div class="collapse" id="{{ order.id }}">
+                {% for item in id_order_item[order.id] %}
+                    <div class="row border">
+                        <div class="col-8">
+                            <div class="row">
+                                <div class="col-2">
+                                    <img src="{{ url_for('static', filename= item.title_book + '/1.png') }}" class="img-thumbnail" alt="Обложка {{ item.title_book }}">
+                                </div>
+                                <div class="col-6">
+                                    <div class="text-start fs-6 fw-medium">Название книги: {{ item.title_book }}</div>
+                                </div>
+                                <div class="col-4">
+                                    <div class="text-start">Количество: {{ item.quantity }}</div>
+                                    <div class="text-start">Цена: {{ item.quantity * item.price }}</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endfor %}
+{% endblock %}

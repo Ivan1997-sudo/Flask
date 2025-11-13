@@ -5,18 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e8713229-7509-49f8-81c8-3118f1c38acf" name="Изменения" comment="Следующий шаг">
-      <change afterPath="$PROJECT_DIR$/Урок 9. Основы шаблонизации в Flask/app/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Урок 9. Основы шаблонизации в Flask/app/routes.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Урок 9. Основы шаблонизации в Flask/app/static/1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Урок 9. Основы шаблонизации в Flask/app/static/2.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Урок 9. Основы шаблонизации в Flask/app/static/css/styles-base.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Урок 9. Основы шаблонизации в Flask/app/templates/about.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Урок 9. Основы шаблонизации в Flask/app/templates/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Урок 9. Основы шаблонизации в Flask/app/templates/contact.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Урок 9. Основы шаблонизации в Flask/app/templates/home.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Урок 9. Основы шаблонизации в Flask/run.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1000/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1000/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1000/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1000/templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1000/templates/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/1000/templates/xxx.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/14 Bookstore/app.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/14 Bookstore/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/14 Bookstore/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/14 Bookstore/templates/cart.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/14 Bookstore/templates/catalog.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/14 Bookstore/templates/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/14 Bookstore/templates/main_page.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/14 Bookstore/templates/making.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/14 Bookstore/templates/orders.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/14 Bookstore/templates/product.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/14 Bookstore/templates/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/999 Пример из урока/templates/xxx.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/пробный.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Урок 12. Агенство тайных агентов/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/Урок 12. Агенство тайных агентов/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Урок 12. Агенство тайных агентов/templates/SecretAgency.html" beforeDir="false" afterPath="$PROJECT_DIR$/Урок 12. Агенство тайных агентов/templates/SecretAgency.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +55,9 @@
     &quot;accountId&quot;: &quot;2194c781-4383-448e-bd75-d31a7739dff2&quot;
   }
 }</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/14 Bookstore/templates/base.html" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -60,7 +72,14 @@
     &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;Python.__init__.executor&quot;: &quot;Run&quot;,
     &quot;Python.app (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.app (2).executor&quot;: &quot;Run&quot;,
     &quot;Python.app.executor&quot;: &quot;Run&quot;,
+    &quot;Python.config.executor&quot;: &quot;Run&quot;,
+    &quot;Python.database.executor&quot;: &quot;Run&quot;,
+    &quot;Python.extensions.executor&quot;: &quot;Run&quot;,
+    &quot;Python.forms.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.models.executor&quot;: &quot;Run&quot;,
     &quot;Python.routes.executor&quot;: &quot;Run&quot;,
     &quot;Python.run.executor&quot;: &quot;Run&quot;,
     &quot;Python.Обучение.executor&quot;: &quot;Run&quot;,
@@ -81,10 +100,36 @@
 }</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\po4te\Flask\app\static" />
+      <recent name="C:\Users\po4te\Flask\999\db" />
+      <recent name="C:\Users\po4te\Flask\999\templates" />
+      <recent name="C:\Users\po4te\Flask\999" />
+      <recent name="C:\Users\po4te\Flask\1000" />
+      <recent name="C:\Users\po4te\Flask\13" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Python.app">
+    <configuration name="Проверка" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="Flask" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/14 Bookstore" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/14 Bookstore/Проверка.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Flask" />
       <option name="ENV_FILES" value="" />
@@ -94,11 +139,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/0 ПРОЕКТ" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/14 Bookstore" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/0 ПРОЕКТ/app.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/14 Bookstore/app.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -110,6 +155,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.app" />
+        <item itemvalue="Python.Проверка" />
       </list>
     </recent_temporary>
   </component>
@@ -224,7 +270,31 @@
       <option name="project" value="LOCAL" />
       <updated>1754662275578</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="Следующий шаг">
+      <option name="closed" value="true" />
+      <created>1759502503669</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1759502503669</updated>
+    </task>
+    <task id="LOCAL-00014" summary="Следующий шаг">
+      <option name="closed" value="true" />
+      <created>1759502554813</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1759502554813</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Следующий шаг">
+      <option name="closed" value="true" />
+      <created>1759502583688</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1759502583688</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

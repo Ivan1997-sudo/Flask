@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block title %}Корзина{% endblock %}
+{% block content %}
+<div class="p-1"></div>
+{% if total_book > 0 %}
+<div class="card fs-3 fw-bold">Корзина</div>
+
+<div class="row">
+    <div class="col-8 border ">
+        {% for book in book_user %}
+        <div class="p-1"></div>
+            <div class="container text-center card">
+                <div class="row ">
+                    <div class="col-2 border">
+                        <img src="{{ url_for('static', filename=book + '/1.png') }}" class="img-thumbnail" alt="Обложка {{ book }}">
+                    </div>
+                    <div class="col-10 border d-flex ">
+                        <div class="row flex-grow-1" >
+                            <div class="col-6 border text-start">
+                                <a class="dropdown-item" href="{{ url_for('product', title_book=book) }}">
+                                    <div class="fs-4 fw-medium text-wrap">{{ book }} </div>
+                                </a>
+                                <div class="fs-5 fw-lighter">{{ book_user[book].author }}</div>
+                            </div>
+
+                            <div class="col-4 border align-self-center">
+                                <form action="{{ url_for('cart', title_book=book, action='-1' ) }}" method="post" style="display:inline;">
+                                    <button type="submit" class="btn btn-outline-success">-</button>
+                                </form>
+                                {{ book_user[book].quantity }}
+                                <form action="{{ url_for('cart', title_book=book, action='+1' ) }}" method="post" style="display:inline;">
+                                    <button type="submit" class="btn btn-outline-success">+</button>
+                                </form>
+                                <form action="{{ url_for('cart', title_book=book, action='Удалить' ) }}" method="post" style="display:inline;">
+                                    <button type="submit" class="btn btn-outline-danger">Удалить</button>
+                                </form>
+                            </div>
+
+                            <div class="col-2 border align-self-center">
+                                <div class="fs-5 fw-bold"> {{ book_user[book].quantity  * book_user[book].price }} ₽</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+    <div class="col-4 border">
+        <div class="p-1"></div>
+        <div class="container card p-2">
+            <div class="text-start fs-2 fw-bold">Детали заказа: </div>
+            <div class="fs-4"> Количество товаров: {{ total_book }} </div>
+            <div class="fs-4 "> Сумма заказа: {{ total_summ }} ₽ </div>
+            <a class="btn btn-outline-success" href="{{ url_for('making') }}" role="button">Перейти к оформлению</a>
+        </div>
+    </div>
+</div>
+
+{% else %}
+<div class="card fs-3 fw-bold">Тут пусто</div>
+{% endif %}
+{% endblock %}
