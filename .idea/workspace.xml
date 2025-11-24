@@ -5,27 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e8713229-7509-49f8-81c8-3118f1c38acf" name="Изменения" comment="Следующий шаг">
-      <change afterPath="$PROJECT_DIR$/1000/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1000/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1000/templates/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1000/templates/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1000/templates/register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/1000/templates/xxx.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/14 Bookstore/app.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/14 Bookstore/models.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/14 Bookstore/templates/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/14 Bookstore/templates/cart.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/14 Bookstore/templates/catalog.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/14 Bookstore/templates/login.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/14 Bookstore/templates/main_page.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/14 Bookstore/templates/making.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/14 Bookstore/templates/orders.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/14 Bookstore/templates/product.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/14 Bookstore/templates/register.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/999 Пример из урока/templates/xxx.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Урок 12. Агенство тайных агентов/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/Урок 12. Агенство тайных агентов/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Урок 12. Агенство тайных агентов/templates/SecretAgency.html" beforeDir="false" afterPath="$PROJECT_DIR$/Урок 12. Агенство тайных агентов/templates/SecretAgency.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Урок 14. Bookstore/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/Урок 14. Bookstore/app.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Урок 14. Bookstore/instance/database.db" beforeDir="false" afterPath="$PROJECT_DIR$/Урок 14. Bookstore/instance/database.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Урок 14. Bookstore/templates/base.html" beforeDir="false" afterPath="$PROJECT_DIR$/Урок 14. Bookstore/templates/base.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -107,29 +90,7 @@
       <recent name="C:\Users\po4te\Flask\13" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.app">
-    <configuration name="Проверка" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
-      <module name="Flask" />
-      <option name="ENV_FILES" value="" />
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/14 Bookstore" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/14 Bookstore/Проверка.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <option name="EMULATE_TERMINAL" value="false" />
-      <option name="MODULE_MODE" value="false" />
-      <option name="REDIRECT_INPUT" value="false" />
-      <option name="INPUT_FILE" value="" />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager">
     <configuration name="app" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="Flask" />
       <option name="ENV_FILES" value="" />
@@ -139,11 +100,11 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/14 Bookstore" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/Урок 14. Bookstore" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/14 Bookstore/app.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/Урок 14. Bookstore/app.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -155,7 +116,6 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.app" />
-        <item itemvalue="Python.Проверка" />
       </list>
     </recent_temporary>
   </component>
@@ -294,7 +254,15 @@
       <option name="project" value="LOCAL" />
       <updated>1759502583688</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="Следующий шаг">
+      <option name="closed" value="true" />
+      <created>1763042584748</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1763042584748</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">

@@ -9,160 +9,162 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
-<div class="container-fluid px-5 text-center text-bg-secondary p-2 shadow">
+<div class="container-fluid px-5 text-center text-bg-secondary shadow">
     <div class="row">
-        <div class="col-md-10 offset-md-1">
-            <div class="row">
-                <div class="col-2 border">
-                    <h2 class="fw-bold text-break">Каталог:</h2>
-                    <div class="accordion" id="myAccordion">
+        <div class="col-md-10 offset-md-1 ">
+            <div class="row ">
+                <div class="col-2">
+                    <div class="sticky-top">
+                        <div class="card fs-3 fw-bold card">Каталог</div>
+                        <div class="accordion" id="myAccordion">
 
-                        <!--Перечень разделов-->
-                        <div class="list-group">
-                            <button class="accordion-button " type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">
-                                  <span class="text-break">Художественная литература</span>
-                            </button>
-                            <div class="collapse" id="collapseExample1" data-bs-parent="#myAccordion">
-                                <div class="card ">
-                                    <div class="list-group">
-                                        <a href="{{ url_for('catalog', genre='Зарубежная современная литература') }}"
-                                           class="list-group-item list-group-item-action list-group-item-danger">Зарубежная современная литература</a>
-                                        <a href="{{ url_for('catalog', genre='Зарубежная классическая литература') }}"
-                                           class="list-group-item list-group-item-action list-group-item-warning">Зарубежная классическая литература</a>
-                                        <a href="{{ url_for('catalog', genre='Русская современная литература') }}"
-                                           class="list-group-item list-group-item-action list-group-item-success">Русская современная литература</a>
-                                        <a href="{{ url_for('catalog', genre='Русская классическая литература') }}"
-                                           class="list-group-item list-group-item-action list-group-item-info">Русская классическая литература</a>
-                                        <a href="{{ url_for('catalog', genre='Фантастика, Фэнтези') }}"
-                                           class="list-group-item list-group-item-action list-group-item-danger">Фантастика, Фэнтези</a>
-                                        <a href="{{ url_for('catalog', genre='Детектив') }}"
-                                           class="list-group-item list-group-item-action list-group-item-warning">Детектив</a>
-                                        <a href="{{ url_for('catalog', genre='Любовный роман') }}"
-                                           class="list-group-item list-group-item-action list-group-item-success">Любовный роман</a>
-                                        <a href="{{ url_for('catalog', genre='Белорусская литература') }}"
-                                           class="list-group-item list-group-item-action list-group-item-info">Белорусская литература</a>
+                            <!--Перечень разделов-->
+                            <div class="list-group ">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample1" aria-expanded="false" aria-controls="collapseExample1">
+                                      <span class="text-break">Художественная литература</span>
+                                </button>
+                                <div class="collapse" id="collapseExample1" data-bs-parent="#myAccordion">
+                                    <div class="card ">
+                                        <div class="list-group">
+                                            <a href="{{ url_for('catalog', genre='Зарубежная современная литература') }}"
+                                               class="list-group-item list-group-item-action list-group-item-danger">Зарубежная современная литература</a>
+                                            <a href="{{ url_for('catalog', genre='Зарубежная классическая литература') }}"
+                                               class="list-group-item list-group-item-action list-group-item-warning">Зарубежная классическая литература</a>
+                                            <a href="{{ url_for('catalog', genre='Русская современная литература') }}"
+                                               class="list-group-item list-group-item-action list-group-item-success">Русская современная литература</a>
+                                            <a href="{{ url_for('catalog', genre='Русская классическая литература') }}"
+                                               class="list-group-item list-group-item-action list-group-item-info">Русская классическая литература</a>
+                                            <a href="{{ url_for('catalog', genre='Фантастика, Фэнтези') }}"
+                                               class="list-group-item list-group-item-action list-group-item-danger">Фантастика, Фэнтези</a>
+                                            <a href="{{ url_for('catalog', genre='Детектив') }}"
+                                               class="list-group-item list-group-item-action list-group-item-warning">Детектив</a>
+                                            <a href="{{ url_for('catalog', genre='Любовный роман') }}"
+                                               class="list-group-item list-group-item-action list-group-item-success">Любовный роман</a>
+                                            <a href="{{ url_for('catalog', genre='Белорусская литература') }}"
+                                               class="list-group-item list-group-item-action list-group-item-info">Белорусская литература</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="list-group">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
-                                <span class="text-break">Нехудожественная литература</span>
-                            </button>
-                            <div class="collapse" id="collapseExample2" data-bs-parent="#myAccordion">
-                                <div class="card ">
-                                    <div class="list-group">
-                                        <a href="{{ url_for('catalog', genre='Научная и опциональная литература') }}"
-                                           class="list-group-item list-group-item-action list-group-item-danger">Научная и опциональная литература</a>
-                                        <a href="{{ url_for('catalog', genre='Научно-популярная литература') }}"
-                                           class="list-group-item list-group-item-action list-group-item-warning">Научно-популярная литература</a>
-                                        <a href="{{ url_for('catalog', genre='Домашний мир, кулинария') }}"
-                                           class="list-group-item list-group-item-action list-group-item-success">Домашний мир, кулинария</a>
-                                        <a href="{{ url_for('catalog', genre='Путеводители, карты, ПДД') }}"
-                                           class="list-group-item list-group-item-action list-group-item-info">Путеводители, карты, ПДД</a>
-                                        <a href="{{ url_for('catalog', genre='Иностранный язык') }}"
-                                           class="list-group-item list-group-item-action list-group-item-danger">Иностранный язык</a>
-                                        <a href="{{ url_for('catalog', genre='Творчество, саморазвития') }}"
-                                           class="list-group-item list-group-item-action list-group-item-warning">Творчество, саморазвития</a>
-                                        <a href="{{ url_for('catalog', genre='ИТ-литература') }}"
-                                           class="list-group-item list-group-item-action list-group-item-success">ИТ-литература</a>
-                                        <a href="{{ url_for('catalog', genre='Красота, Спорт, Питание') }}"
-                                           class="list-group-item list-group-item-action list-group-item-info">Красота, Спорт, Питание</a>
+                            <div class="list-group">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample2" aria-expanded="false" aria-controls="collapseExample2">
+                                    <span class="text-break">Нехудожественная литература</span>
+                                </button>
+                                <div class="collapse" id="collapseExample2" data-bs-parent="#myAccordion">
+                                    <div class="card ">
+                                        <div class="list-group">
+                                            <a href="{{ url_for('catalog', genre='Научная и опциональная литература') }}"
+                                               class="list-group-item list-group-item-action list-group-item-danger">Научная и опциональная литература</a>
+                                            <a href="{{ url_for('catalog', genre='Научно-популярная литература') }}"
+                                               class="list-group-item list-group-item-action list-group-item-warning">Научно-популярная литература</a>
+                                            <a href="{{ url_for('catalog', genre='Домашний мир, кулинария') }}"
+                                               class="list-group-item list-group-item-action list-group-item-success">Домашний мир, кулинария</a>
+                                            <a href="{{ url_for('catalog', genre='Путеводители, карты, ПДД') }}"
+                                               class="list-group-item list-group-item-action list-group-item-info">Путеводители, карты, ПДД</a>
+                                            <a href="{{ url_for('catalog', genre='Иностранный язык') }}"
+                                               class="list-group-item list-group-item-action list-group-item-danger">Иностранный язык</a>
+                                            <a href="{{ url_for('catalog', genre='Творчество, саморазвития') }}"
+                                               class="list-group-item list-group-item-action list-group-item-warning">Творчество, саморазвития</a>
+                                            <a href="{{ url_for('catalog', genre='ИТ-литература') }}"
+                                               class="list-group-item list-group-item-action list-group-item-success">ИТ-литература</a>
+                                            <a href="{{ url_for('catalog', genre='Красота, Спорт, Питание') }}"
+                                               class="list-group-item list-group-item-action list-group-item-info">Красота, Спорт, Питание</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="list-group">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample3">
-                                <span class="text-break">Детская литература</span>
-                            </button>
-                            <div class="collapse" id="collapseExample3" data-bs-parent="#myAccordion">
-                                <div class="card ">
-                                    <div class="list-group">
-                                        <a href="{{ url_for('catalog', genre='Художественная литература') }}"
-                                           class="list-group-item list-group-item-action list-group-item-danger">Художественная литература</a>
-                                        <a href="{{ url_for('catalog', genre='') }}"
-                                           class="list-group-item list-group-item-action list-group-item-warning">Развивающая литература</a>
-                                        <a href="{{ url_for('catalog', genre='Развивающая литература') }}"
-                                           class="list-group-item list-group-item-action list-group-item-success">Досуг, Творчество</a>
-                                        <a href="{{ url_for('catalog', genre='Энциклопедии') }}"
-                                           class="list-group-item list-group-item-action list-group-item-info">Энциклопедии</a>
-                                        <a href="{{ url_for('catalog', genre='Интерактивные, игровые книги') }}"
-                                           class="list-group-item list-group-item-action list-group-item-danger">Интерактивные, игровые книги</a>
-                                        <a href="{{ url_for('catalog', genre='Книги для родителей') }}"
-                                           class="list-group-item list-group-item-action list-group-item-warning">Книги для родителей</a>
+                            <div class="list-group">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample3" aria-expanded="false" aria-controls="collapseExample3">
+                                    <span class="text-break">Детская литература</span>
+                                </button>
+                                <div class="collapse" id="collapseExample3" data-bs-parent="#myAccordion">
+                                    <div class="card ">
+                                        <div class="list-group">
+                                            <a href="{{ url_for('catalog', genre='Художественная литература') }}"
+                                               class="list-group-item list-group-item-action list-group-item-danger">Художественная литература</a>
+                                            <a href="{{ url_for('catalog', genre='') }}"
+                                               class="list-group-item list-group-item-action list-group-item-warning">Развивающая литература</a>
+                                            <a href="{{ url_for('catalog', genre='Развивающая литература') }}"
+                                               class="list-group-item list-group-item-action list-group-item-success">Досуг, Творчество</a>
+                                            <a href="{{ url_for('catalog', genre='Энциклопедии') }}"
+                                               class="list-group-item list-group-item-action list-group-item-info">Энциклопедии</a>
+                                            <a href="{{ url_for('catalog', genre='Интерактивные, игровые книги') }}"
+                                               class="list-group-item list-group-item-action list-group-item-danger">Интерактивные, игровые книги</a>
+                                            <a href="{{ url_for('catalog', genre='Книги для родителей') }}"
+                                               class="list-group-item list-group-item-action list-group-item-warning">Книги для родителей</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="list-group">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample4" aria-expanded="false" aria-controls="collapseExample4">
-                                <span class="text-break">Бизнес литература</span>
-                            </button>
-                            <div class="collapse" id="collapseExample4" data-bs-parent="#myAccordion">
-                                <div class="card ">
-                                    <div class="list-group">
-                                        <a href="{{ url_for('catalog', genre='Саморазвитие, Карьера') }}"
-                                           class="list-group-item list-group-item-action list-group-item-danger">Саморазвитие, Карьера</a>
-                                        <a href="{{ url_for('catalog', genre='Менеджмент, Управление') }}"
-                                           class="list-group-item list-group-item-action list-group-item-warning">Менеджмент, Управление</a>
-                                        <a href="{{ url_for('catalog', genre='Маркетинг, Реклама') }}"
-                                           class="list-group-item list-group-item-action list-group-item-success">Маркетинг, Реклама</a>
-                                        <a href="{{ url_for('catalog', genre='Истории успеха') }}"
-                                           class="list-group-item list-group-item-action list-group-item-info">Истории успеха</a>
-                                        <a href="{{ url_for('catalog', genre='Предпринимательство') }}"
-                                           class="list-group-item list-group-item-action list-group-item-danger">Предпринимательство</a>
+                            <div class="list-group">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample4" aria-expanded="false" aria-controls="collapseExample4">
+                                    <span class="text-break">Бизнес литература</span>
+                                </button>
+                                <div class="collapse" id="collapseExample4" data-bs-parent="#myAccordion">
+                                    <div class="card ">
+                                        <div class="list-group">
+                                            <a href="{{ url_for('catalog', genre='Саморазвитие, Карьера') }}"
+                                               class="list-group-item list-group-item-action list-group-item-danger">Саморазвитие, Карьера</a>
+                                            <a href="{{ url_for('catalog', genre='Менеджмент, Управление') }}"
+                                               class="list-group-item list-group-item-action list-group-item-warning">Менеджмент, Управление</a>
+                                            <a href="{{ url_for('catalog', genre='Маркетинг, Реклама') }}"
+                                               class="list-group-item list-group-item-action list-group-item-success">Маркетинг, Реклама</a>
+                                            <a href="{{ url_for('catalog', genre='Истории успеха') }}"
+                                               class="list-group-item list-group-item-action list-group-item-info">Истории успеха</a>
+                                            <a href="{{ url_for('catalog', genre='Предпринимательство') }}"
+                                               class="list-group-item list-group-item-action list-group-item-danger">Предпринимательство</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="list-group">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample5" aria-expanded="false" aria-controls="collapseExample5">
-                                <span class="text-break">Учебная литература</span>
-                            </button>
-                            <div class="collapse" id="collapseExample5" data-bs-parent="#myAccordion">
-                                <div class="card ">
-                                    <div class="list-group">
-                                        <a href="{{ url_for('catalog', genre='Подготовка к экзаменам и ЦТ') }}"
-                                           class="list-group-item list-group-item-action list-group-item-danger">Подготовка к экзаменам и ЦТ</a>
-                                        <a href="{{ url_for('catalog', genre='Рабочие тетради для школьников') }}"
-                                           class="list-group-item list-group-item-action list-group-item-warning">Рабочие тетради для школьников</a>
+                            <div class="list-group">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample5" aria-expanded="false" aria-controls="collapseExample5">
+                                    <span class="text-break">Учебная литература</span>
+                                </button>
+                                <div class="collapse" id="collapseExample5" data-bs-parent="#myAccordion">
+                                    <div class="card ">
+                                        <div class="list-group">
+                                            <a href="{{ url_for('catalog', genre='Подготовка к экзаменам и ЦТ') }}"
+                                               class="list-group-item list-group-item-action list-group-item-danger">Подготовка к экзаменам и ЦТ</a>
+                                            <a href="{{ url_for('catalog', genre='Рабочие тетради для школьников') }}"
+                                               class="list-group-item list-group-item-action list-group-item-warning">Рабочие тетради для школьников</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="list-group">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample6" aria-expanded="false" aria-controls="collapseExample6">
-                                <span class="text-break">Книги на иностранном языке</span>
-                            </button>
-                            <div class="collapse" id="collapseExample6" data-bs-parent="#myAccordion">
-                                <div class="card ">
-                                    <div class="list-group">
-                                        <a href="{{ url_for('catalog', genre='Английский') }}"
-                                           class="list-group-item list-group-item-action list-group-item-danger">Английский</a>
-                                        <a href="{{ url_for('catalog', genre='Французский') }}"
-                                           class="list-group-item list-group-item-action list-group-item-warning">Французский</a>
-                                        <a href="{{ url_for('catalog', genre='Немецкий') }}"
-                                           class="list-group-item list-group-item-action list-group-item-success">Немецкий</a>
+                            <div class="list-group">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample6" aria-expanded="false" aria-controls="collapseExample6">
+                                    <span class="text-break">Книги на иностранном языке</span>
+                                </button>
+                                <div class="collapse" id="collapseExample6" data-bs-parent="#myAccordion">
+                                    <div class="card ">
+                                        <div class="list-group">
+                                            <a href="{{ url_for('catalog', genre='Английский') }}"
+                                               class="list-group-item list-group-item-action list-group-item-danger">Английский</a>
+                                            <a href="{{ url_for('catalog', genre='Французский') }}"
+                                               class="list-group-item list-group-item-action list-group-item-warning">Французский</a>
+                                            <a href="{{ url_for('catalog', genre='Немецкий') }}"
+                                               class="list-group-item list-group-item-action list-group-item-success">Немецкий</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="list-group">
-                            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample7" aria-expanded="false" aria-controls="collapseExample7">
-                                <span class="text-break">Комиксы, манга, артбуки</span>
-                            </button>
-                            <div class="collapse" id="collapseExample7" data-bs-parent="#myAccordion">
-                                <div class="card ">
-                                    <div class="list-group">
-                                        <a href="{{ url_for('catalog', genre='Комиксы, манга, артбуки') }}"
-                                           class="list-group-item list-group-item-action list-group-item-danger">Комиксы, манга, артбуки</a>
+                            <div class="list-group">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample7" aria-expanded="false" aria-controls="collapseExample7">
+                                    <span class="text-break">Комиксы, манга, артбуки</span>
+                                </button>
+                                <div class="collapse" id="collapseExample7" data-bs-parent="#myAccordion">
+                                    <div class="card ">
+                                        <div class="list-group">
+                                            <a href="{{ url_for('catalog', genre='Комиксы, манга, артбуки') }}"
+                                               class="list-group-item list-group-item-action list-group-item-danger">Комиксы, манга, артбуки</a>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
@@ -171,8 +173,8 @@
                 </div>
 
                 <!--Навигационная панель-->
-                <div class="col-10 border">
-                    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="col-10">
+                    <nav class="navbar navbar-expand-lg bg-body-tertiary sticky-top">
                         <div class="container-fluid">
                             <a class="navbar-brand fw-bold" href="{{ url_for('main_page') }}">
                                 <img src="{{ url_for('static', filename='/Логотип.png') }}" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
@@ -246,9 +248,7 @@
                         </div>
                     </nav>
                     {% block content %} {% endblock %}
-
                 </div>
-
             </div>
         </div>
     </div>

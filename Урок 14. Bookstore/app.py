@@ -54,7 +54,7 @@ def inject_user_cart():
 #Главная страница книжного магазина
 @app.route('/')
 def main_page():
-    books = Book.query.order_by(Book.rating.desc()).all()
+    books = Book.query.order_by(Book.rating.desc()).limit(10).all()
     books = {x.title_book: {'price': x.price, 'rating': x.rating} for x in books}
     #Определяем у авторизованного пользователя, какие книги есть в корзине
     is_authenticated = current_user.is_authenticated
