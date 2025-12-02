@@ -45,24 +45,20 @@ def inject_user_cart():
         quantity = sum(item.quantity for item in cart_items)
         return {
             'name': current_user.username,
-            'quantity_book': quantity}
+            'quantity_book': quantity,
+            'cart_item': {x.title_book: x for x in cart_items}} #Определяем у авторизованного пользователя, какие книги есть в корзине
     else:
         return {
             'name': None,
-            'quantity_book': 0}
+            'quantity_book': 0,
+            'cart_item': None}
 
 #Главная страница книжного магазина
 @app.route('/')
 def main_page():
     books = Book.query.order_by(Book.rating.desc()).limit(10).all()
     books = {x.title_book: {'price': x.price, 'rating': x.rating} for x in books}
-    #Определяем у авторизованного пользователя, какие книги есть в корзине
-    is_authenticated = current_user.is_authenticated
-    cart_item = current_user.username if is_authenticated else None
-    if is_authenticated:
-        cart_item = CartItem.query.filter_by(email=current_user.email).all()
-        cart_item = {x.title_book: x for x in cart_item}
-    return render_template('main_page.html', books=books, cart_item=cart_item)
+    return render_template('main_page.html', books=books)
 
 
 #Каталог
@@ -70,19 +66,12 @@ def main_page():
 def catalog(genre):
     books = Book.query.filter_by(genre=genre).all()
     books = {x.title_book: {'price': x.price, 'rating': x.rating} for x in books}
-    #Определяем у авторизованного пользователя, какие книги есть в корзине
-    is_authenticated = current_user.is_authenticated
-    cart_item = current_user.username if is_authenticated else None
-    if is_authenticated:
-        cart_item = CartItem.query.filter_by(email=current_user.email).all()
-        cart_item = {x.title_book: x for x in cart_item}
-    return render_template('catalog.html', books=books, genre=genre, cart_item=cart_item)
+    return render_template('catalog.html', books=books, genre=genre)
 
 
 #Страница книги
 @app.route('/product/<title_book>', methods=['GET', 'POST'])
 def product(title_book):
-    # Определяем, авторизован ли пользователь
     if request.method == 'POST':
         review = request.form['review']
         estimation = request.form['estimation']
@@ -114,7 +103,9 @@ def product(title_book):
     total_review = Review.query.filter_by(title_book=title_book).all()
     quantity_review = len(total_review)
     #Определяем наличие книги в корзине, если пользователь авторизован
-    cart_item = CartItem.query.filter_by(email=current_user.email, title_book=title_book).first()
+    cart_item = None
+    if current_user.is_authenticated:
+        cart_item = CartItem.query.filter_by(email=current_user.email, title_book=title_book).first()
     return render_template('product.html', book=book, total_review=total_review, quantity_review=quantity_review, cart_item=cart_item)
 
 
